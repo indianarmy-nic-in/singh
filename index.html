@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Preloader</title>
+    <style>
+        /* पेज के मार्जिन और पैडिंग को हटाना ताकि चित्र पूरी स्क्रीन पर आए */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000; /* बैकग्राउंड कलर */
+        }
+
+        /* प्रीलोडर की डिज़ाइन (इंस्टाग्राम स्टोरी स्टाइल) */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            /* नीचे दिए गए URL में अपनी इमेज का लिंक डालें */
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwkJwiFb0BHeve5IuDoSyGXIscDmGeJgeRcbT-IhX3-dpqmcwZJAzO_MA&s=10'); 
+            background-size: cover; /* इमेज को पूरी स्क्रीन पर फिट करने के लिए */
+            background-position: center; /* इमेज को बीच में रखने के लिए */
+            background-repeat: no-repeat;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* एक छोटा सा लोडिंग टेक्स्ट या एनीमेशन (वैकल्पिक) */
+        .loading-text {
+            color: white;
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+     
+    </div>
+
+    <script>
+        // 3 सेकंड (3000 मिलीसेकंड) का टाइमर
+        setTimeout(function() {
+            
+            // 3 सेकंड बाद प्रीलोडर को छुपा दें
+            document.getElementById('preloader').style.display = 'none';
+
+            // सीधे WhatsApp ऐप खोलने का लिंक
+            window.location.href = "whatsapp://send"; 
+            
+            /* नोट: यदि आप किसी विशेष नंबर पर मैसेज भेजना चाहते हैं, तो ऊपर वाली लाइन हटाकर नीचे वाली लाइन का इस्तेमाल करें:
+               window.location.href = "whatsapp://send?phone=+910000000000&text=Hello";
+            */
+
+        }, 3000); // 3000 का मतलब 3 सेकंड है
+    </script>
+
+</body>
+</html>
